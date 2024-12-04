@@ -1,0 +1,110 @@
+/* Gaya untuk elemen body */
+body {
+  background-image: url('../images/background.jpg'); /* Path relatif ke gambar */
+  background-size: cover; /* Membuat gambar menutupi seluruh halaman */
+  background-position: center; /* Memusatkan gambar */
+  background-attachment: fixed; /* Membuat gambar tetap saat scroll */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Posisikan elemen ke atas */
+  padding-top: 130px; /* Atur jarak dari atas */
+}
+
+
+
+/* Gaya untuk container utama */
+.container {
+  background-color: #fff; /* Warna latar belakang formulir */
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+  padding: 30px;
+  max-width: 600px; /* Lebar maksimum */
+  margin-left: 300px; /* Memberikan jarak ke kiri */ 
+}
+
+/* Header Styles */
+h1 {
+  color: #16423C;
+  text-align: center; /* Memastikan teks berada di tengah */
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
+  position: relative; /* Diperlukan untuk mengatur pseudo-element */
+}
+
+h1::after {
+  content: ""; /* Menambahkan elemen visual */
+  display: block; /* Membuat pseudo-element menjadi blok */
+  width: 230px; /* Panjang border di bawah teks */
+  height: 2px; /* Ketebalan border */
+  background-color: #16423C; /* Warna border */
+  margin: 0 auto; /* Memusatkan border */
+  margin-top: 10px; /* Jarak antara teks dan border */
+}
+
+/* Form Styles */
+.form-group label {
+  font-family: "Nunito", sans-serif;
+  font-weight: bolder;
+  color: #16423C;
+}
+
+.form-control {
+  border: 2px solid #1b5238;
+  border-radius: 6px;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #09ff00;
+  box-shadow: 0 0 5px #3333;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #56ab2f;
+  border-color: #56ab2f;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a8e063;
+  border-color: #a8e063;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #999;
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .container {
+      padding: 20px;
+  }
+
+  h1 {
+      font-size: 1.5rem;
+  }
+}

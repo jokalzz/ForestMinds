@@ -1,0 +1,60 @@
+/* assets/css/send_message.css */
+
+body {
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    align-items: center; /* Pusatkan konten secara vertikal */
+    height: 100vh; /* Menggunakan tinggi viewport untuk memusatkan vertikal */
+    margin: 0; /* Menghilangkan margin default */
+    background-color: #9EC8B9; /* Warna latar belakang yang lembut */
+    font-family: Arial, sans-serif; /* Font yang bersih dan modern */
+}
+
+.container {
+    width: 90%; /* Lebar responsif */
+    max-width: 720px; /* Lebar maksimum untuk tampilan desktop */
+    margin: 0; /* Menghilangkan margin */
+    padding: 5rem; /* Padding di dalam container */
+    background-color: #1B4242; /* Warna latar belakang putih untuk konten */
+    border-radius: 8px; /* Sudut membulat pada container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+
+h1 {
+    color: #9EC8B9; /* Warna biru untuk judul */
+    text-align: center; /* Pusatkan teks judul */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 16px; /* Ukuran font untuk paragraf */
+    line-height: 1.5; /* Jarak antar garis */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #9EC8B9;
+}
+
+strong {
+    color: #9EC8B9; /* Warna gelap untuk teks tebal */
+}
+
+
+.btn-primary {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block; /* Membuat tombol menjadi block untuk pusat */
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 10px 20px; /* Padding untuk tombol */
+    font-size: 16px; /* Ukuran font untuk tombol */
+    border-radius: 20px; /* Sudut membulat pada tombol */
+    background-color: #19201d;
+    border-color: #19201d;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #092635;
+    border-color: #092635;
+    transform: scale(1.05);
+  }
