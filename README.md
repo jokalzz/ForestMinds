@@ -9,11 +9,9 @@
   <br />
   <br />
 
-  <h2 align="center">EduHome - Education website</h2>
+  <h2 align="center">ForestMinds - Website Edukasi</h2>
 
-  EduHome is a fully responsive education website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
-
-  <a href="https://codewithsadee.github.io/eduhome/"><strong>➥ Live Demo</strong></a>
+  ForestMinds adalah adalah sebuah langkah awal menuju dunia yang hijau.
 
 </div>
 
@@ -21,8 +19,14 @@
 
 ### Demo Screeshots
 
-![EduHome Desktop Demo](./readme-images/desktop.png "Desktop Demo")
-
+![EduHome Desktop Demo](./readme-images/index.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/Login_Page.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/register.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/beranda.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/edukasi.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/course.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/tentangkami.png "Desktop Demo")
+![EduHome Desktop Demo](./readme-images/kontak.png "Desktop Demo")
 ### Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -31,23 +35,19 @@ Before you begin, ensure you have met the following requirements:
 
 ### Run Locally
 
-To run **EduHome** locally, run this command on your git bash:
+To run **ForestMinds** locally, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/codewithsadee/eduhome.git
+sudo git clone https://github.com/jokalzz/ForestMinds.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/codewithsadee/eduhome.git
+git clone https://github.com/jokalzz/ForestMinds.git
 ```
-
-### Contact
-
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
 
 ### License
 
