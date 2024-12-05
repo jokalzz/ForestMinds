@@ -253,38 +253,44 @@ $comments_result = mysqli_stmt_get_result($stmt);
 
                 <div>
                   <h3 class="h3 item-title">Berikut Pembahasannya:</h3>
-                  <h4 class="h4"> 1. Peran Hutan Bagi Kehidupan </h4>
                   <p class="item-text">
-Hutan disebut "paru-paru dunia" karena menghasilkan udara bersih untuk bernafas.
-Hutan adalah habitat bagi 80% binatang dan tumbuhan di daratan.
-Hutan membantu menjaga siklus hujan, suhu bumi, dan ketersediaan air bersih.
-Banyak produk kehidupan sehari-hari berasal dari hutan.
+                    Kebakaran hutan di Indonesia sering terjadi saat musim kemarau, baik secara alami karena panas matahari maupun akibat ulah manusia yang sengaja 
+                    membakar lahan untuk perkebunan.
                   </p>
-                  <h4 class="h4-2"> 2. Dampak Kehilangan Hutan </h4>
+                  <br>
+                  <h4>Faktor Utama:</h4>
+                  <ol>
+                    <li>
+                      <strong>Penyebab alami:</strong> Suhu tinggi dan udara kering dapat memicu percikan api dari gesekan ranting.
+                    </li>
+                    <li>
+                      <strong>Penyebab manusia:</strong> Aktivitas pembukaan lahan dengan cara membakar sering kali menyebabkan api meluas.
+                    </li>
+                  </ol>
+                  <br>
+                  <h4>Cara Mengatasi:</h4>
+                  <ol>
+                    <li>
+                      <strong>Edukasi:</strong> Mengingatkan masyarakat untuk tidak membakar hutan.
+                    </li>
+                    <li>
+                      <strong>Perlindungan lahan gambut:</strong>
+                      <ul>
+                        <li>Lahan gambut basah dapat mencegah kebakaran meluas.</li>
+                        <li>Jika lahan gambut kering, sangat rawan terbakar dan melepaskan karbon dioksida ke atmosfer, memperparah perubahan iklim.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Rehabilitasi:</strong> Menanam kembali pohon di area yang terbakar untuk memulihkan hutan.
+                    </li>
+                  </ol>
+                  <br>
+                  <h4>Kesimpulan:</h4>
                   <p class="item-text">
-Punahnya flora dan fauna yang khas.
-Siklus hujan menjadi kacau, dunia semakin panas.
-Berkurangnya air bersih dan udara bersih, menyebabkan gangguan pernapasan.
-Kehidupan manusia menjadi sulit, hampir tidak mungkin bertahan dengan baik tanpa hutan.
-                  </p>
-                  <h4 class="h4-2"> 3. Kondisi Hutan Indonesia </h4>
-                  <p class="item-text">
-                  Indonesia adalah salah satu negara dengan hutan terbesar di dunia, tapi luas hutan terus berkurang.
-Penyebab utama: kebakaran hutan yang disengaja oleh perusahaan rakus untuk membuka lahan.
-                  </p>
-                  <h4 class="h4-2"> 4. Situasi Global </h4>
-                  <p class="item-text">
-                  Setiap tahun, 15 miliar pohon ditebang di seluruh dunia.
-                  Jika laju kerusakan hutan tidak dihentikan, dalam 200 tahun seluruh pohon di bumi bisa habis.
-                  </p>
-                  <h4 class="h4-2"> 5. Solusi untuk Menjaga Hutan </h4>
-                  <p class="item-text">
-Gotong-royong mencegah kebakaran dan pembukaan lahan ilegal.
-Membeli produk yang berasal dari hutan yang dikelola secara berkelanjutan.
-Meningkatkan kesadaran masyarakat tentang pentingnya menjaga hutan.
-Mendukung organisasi yang peduli terhadap pelestarian hutan.
+                    Melindungi lahan gambut dan mencegah kebakaran hutan adalah kunci untuk menjaga lingkungan. Mari bersama menjaga hutan dan lahan gambut demi masa depan yang lebih baik.
                   </p>
                 </div>
+
                 
           </div>
           
