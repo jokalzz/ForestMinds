@@ -1,6 +1,6 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/jokalzz/ForestMinds)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/jokalzz/eduhome)
   ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/eduhome?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/eduhome?style=social)
   [![YouTube Video Views](https://img.shields.io/youtube/views/dMZujoGxjRo?style=social)](https://youtu.be/dMZujoGxjRo)
