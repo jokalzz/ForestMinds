@@ -1,9 +1,8 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/eduhome)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/jokalzz/ForestMinds)
   ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/eduhome?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/eduhome?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
   [![YouTube Video Views](https://img.shields.io/youtube/views/dMZujoGxjRo?style=social)](https://youtu.be/dMZujoGxjRo)
 
   <br />
@@ -37,15 +36,16 @@ jokalzz -> Jonathan Gabrilio Kaligis (230211060040)
 ![EduHome Desktop Demo](./readme-images/course.png "Desktop Demo")
 ![EduHome Desktop Demo](./readme-images/tentangkami.png "Desktop Demo")
 ![EduHome Desktop Demo](./readme-images/kontak.png "Desktop Demo")
-### Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+### Persiapan download
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+Sebelum mulai jangan lupa install Git
 
-### Run Locally
+* [Git](https://git-scm.com/downloads "Download Git") install terlebih dahulu
 
-To run **ForestMinds** locally, run this command on your git bash:
+### Penggunaan Project
+
+Cara menggunakan project ini **ForestMinds** di lokal gunakan komen ini:
 
 Linux and macOS:
 
@@ -61,4 +61,4 @@ git clone https://github.com/jokalzz/ForestMinds.git
 
 ### License
 
-This project is **free to use** and does not contains any license.
+**free to use** 
