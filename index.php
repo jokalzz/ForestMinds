@@ -48,11 +48,7 @@ include("php/config.php");
 
 <body id="top">
 <div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
+        
   <main>
     <article>
 
@@ -459,17 +455,6 @@ include("php/config.php");
   -->
   <script src="./assets/js/script.js" defer></script>
 
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="js/plugins.js"></script>
-  <script>
-        $(window).on("load", function() {
-            $('body').addClass('loaded');
-        });
-    </script>
 </body>
 
 </html>

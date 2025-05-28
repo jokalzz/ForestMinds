@@ -7,6 +7,33 @@ if(isset($_SESSION['user_id'])) {
     header("Location: beranda.php");
     exit();
 }
+
+// Function to validate password strength
+function validatePasswordStrength($password) {
+    $errors = [];
+    
+    // Check minimum length
+    if (strlen($password) < 8) {
+        $errors[] = "Password minimal 8 karakter";
+    }
+    
+    // Check for uppercase letter
+    if (!preg_match('/[A-Z]/', $password)) {
+        $errors[] = "Password harus mengandung minimal 1 huruf besar";
+    }
+    
+    // Check for number
+    if (!preg_match('/[0-9]/', $password)) {
+        $errors[] = "Password harus mengandung minimal 1 angka";
+    }
+    
+    // Check for symbol
+    if (!preg_match('/[!@#$%^&*()_+\-=\[\]{};\':"\\|,.<>\/?]/', $password)) {
+        $errors[] = "Password harus mengandung minimal 1 simbol (!@#$%^&*)";
+    }
+    
+    return $errors;
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,10 +77,9 @@ if(isset($_SESSION['user_id'])) {
                 $errors[] = "Umur minimal 10 tahun";
             }
 
-            // Validasi password
-            if (strlen($password) < 8) {
-                $errors[] = "Password minimal 8 karakter";
-            }
+            // Validasi password strength
+            $passwordErrors = validatePasswordStrength($password);
+            $errors = array_merge($errors, $passwordErrors);
 
             // Cek apakah ada error
             if (empty($errors)) {
@@ -90,7 +116,7 @@ if(isset($_SESSION['user_id'])) {
                     mysqli_stmt_bind_param($stmt_insert, "ssis", $username, $email, $age, $hashed_password);
 
                     if (mysqli_stmt_execute($stmt_insert)) {
-                        echo "<div class='message'>
+                        echo "<div class='message success'>
                                 <p>Registrasi berhasil! Silakan login.</p>
                               </div><br>";
                         echo "<a href='login.php'><button class='btn'>Login Sekarang</button></a>";
@@ -98,6 +124,13 @@ if(isset($_SESSION['user_id'])) {
                     } else {
                         $errors[] = "Registrasi gagal. Silakan coba lagi.";
                     }
+                }
+                
+                // Tutup prepared statements
+                mysqli_stmt_close($stmt_username);
+                mysqli_stmt_close($stmt_email);
+                if (isset($stmt_insert)) {
+                    mysqli_stmt_close($stmt_insert);
                 }
             }
 
@@ -113,7 +146,7 @@ if(isset($_SESSION['user_id'])) {
         ?>
 
         <header>Sign Up</header>
-        <form action="" method="post">
+        <form action="" method="post" id="registrationForm">
             <div class="field input">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" 
@@ -137,16 +170,138 @@ if(isset($_SESSION['user_id'])) {
 
             <div class="field input">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" autocomplete="off" required>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <span class="password-toggle" onclick="togglePassword()">👁️ - Show</span>
+                </div>
+                
+                <div class="password-requirements">
+                    <h4>Password Requirements:</h4>
+                    <div class="requirement invalid" id="length-req">
+                        <div class="requirement-icon">✗</div>
+                        <span>Minimal 8 karakter</span>
+                    </div>
+                    <div class="requirement invalid" id="uppercase-req">
+                        <div class="requirement-icon">✗</div>
+                        <span>Minimal 1 huruf besar (A-Z)</span>
+                    </div>
+                    <div class="requirement invalid" id="number-req">
+                        <div class="requirement-icon">✗</div>
+                        <span>Minimal 1 angka (0-9)</span>
+                    </div>
+                    <div class="requirement invalid" id="symbol-req">
+                        <div class="requirement-icon">✗</div>
+                        <span>Minimal 1 simbol (!@#$%^&*)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="field">
-                <input type="submit" class="btn" name="submit" value="Register" required>
+                <input type="submit" class="btn" name="submit" value="Register" id="submitBtn" disabled>
             </div>
             <div class="links">
                 Already a member? <a href="login.php">Sign In</a>
             </div>
         </form>
     </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈 - Hide';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️ - Show';
+            }
+        }
+
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            const submitBtn = document.getElementById('submitBtn');
+            
+            // Requirements
+            const lengthReq = document.getElementById('length-req');
+            const uppercaseReq = document.getElementById('uppercase-req');
+            const numberReq = document.getElementById('number-req');
+            const symbolReq = document.getElementById('symbol-req');
+            
+            let isValid = true;
+            
+            // Check length (minimum 8 characters)
+            if (password.length >= 8) {
+                lengthReq.classList.remove('invalid');
+                lengthReq.classList.add('valid');
+                lengthReq.querySelector('.requirement-icon').textContent = '✓';
+            } else {
+                lengthReq.classList.remove('valid');
+                lengthReq.classList.add('invalid');
+                lengthReq.querySelector('.requirement-icon').textContent = '✗';
+                isValid = false;
+            }
+            
+            // Check uppercase
+            if (/[A-Z]/.test(password)) {
+                uppercaseReq.classList.remove('invalid');
+                uppercaseReq.classList.add('valid');
+                uppercaseReq.querySelector('.requirement-icon').textContent = '✓';
+            } else {
+                uppercaseReq.classList.remove('valid');
+                uppercaseReq.classList.add('invalid');
+                uppercaseReq.querySelector('.requirement-icon').textContent = '✗';
+                isValid = false;
+            }
+            
+            // Check number
+            if (/[0-9]/.test(password)) {
+                numberReq.classList.remove('invalid');
+                numberReq.classList.add('valid');
+                numberReq.querySelector('.requirement-icon').textContent = '✓';
+            } else {
+                numberReq.classList.remove('valid');
+                numberReq.classList.add('invalid');
+                numberReq.querySelector('.requirement-icon').textContent = '✗';
+                isValid = false;
+            }
+            
+            // Check symbol
+            if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
+                symbolReq.classList.remove('invalid');
+                symbolReq.classList.add('valid');
+                symbolReq.querySelector('.requirement-icon').textContent = '✓';
+            } else {
+                symbolReq.classList.remove('valid');
+                symbolReq.classList.add('invalid');
+                symbolReq.querySelector('.requirement-icon').textContent = '✗';
+                isValid = false;
+            }
+            
+            // Enable/disable submit button
+            submitBtn.disabled = !isValid;
+        }
+
+        // Add event listener for password input
+        document.getElementById('password').addEventListener('input', validatePassword);
+        
+        // Form validation on submit
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            
+            // Check all requirements
+            const hasMinLength = password.length >= 8;
+            const hasUppercase = /[A-Z]/.test(password);
+            const hasNumber = /[0-9]/.test(password);
+            const hasSymbol = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+            
+            if (!hasMinLength || !hasUppercase || !hasNumber || !hasSymbol) {
+                e.preventDefault();
+                alert('Password tidak memenuhi semua persyaratan!');
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
