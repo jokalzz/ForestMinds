@@ -16,7 +16,7 @@ if(!isset($_SESSION['user_id'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ForestMinds</title>
+  <title>ForestLens</title>
 
   <!-- 
     - favicon
@@ -56,13 +56,13 @@ if(!isset($_SESSION['user_id'])) {
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">ForestMinds</a>
+        <a href="#" class="logo">ForestLens</a>
       </h1>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
-          <a href="#" class="logo">ForestMinds</a>
+          <a href="#" class="logo">ForestLens</a>
 
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
             <ion-icon name="close-outline"></ion-icon>
@@ -71,7 +71,7 @@ if(!isset($_SESSION['user_id'])) {
 
         <ul class="navbar-list">
         <li class="navbar-item">
-            <a href="prediksi.php" class="navbar-link" data-nav-toggler>Prediksi</a>
+            <a href="prediksi.php" class="navbar-link" data-nav-toggler></a>
           </li>
 
           <li class="navbar-item">
@@ -79,7 +79,7 @@ if(!isset($_SESSION['user_id'])) {
           </li>
 
           <li class="navbar-item">
-            <a href="edukasi.php" class="navbar-link" data-nav-toggler>Course</a>
+            <a href="edukasi.php" class="navbar-link" data-nav-toggler>Kursus</a>
           </li>
 
           <li class="navbar-item">
@@ -87,7 +87,7 @@ if(!isset($_SESSION['user_id'])) {
           </li>
 
           <li class="navbar-item">
-            <a href="contact.php" class="navbar-link" data-nav-toggler>Contact</a>
+            <a href="contact.php" class="navbar-link" data-nav-toggler>Kontak</a>
           </li>
 
         </ul>
@@ -167,33 +167,11 @@ if(!isset($_SESSION['user_id'])) {
 
       <div class="footer-brand">
 
-        <a href="#" class="logobottom">ForestMinds</a>
+        <a href="#" class="logobottom">ForestLens</a>
 
         <p class="section-text">
-        ForestMinds adalah sebuah langkah awal menuju dunia yang hijau.
+        ForestLens adalah sebuah langkah awal menuju dunia yang hijau.
         </p>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-discord"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
 
       </div>
 
@@ -201,7 +179,7 @@ if(!isset($_SESSION['user_id'])) {
 
     <div class="footer-bottom text-center">
       <p class="copyright">
-        Copyright 2024 ForestMinds. All Rights Reserved.
+        Copyright 2024 ForestLens. All Rights Reserved.
       </p>
     </div>
   </div>

@@ -3,7 +3,12 @@ session_start();
 
 // Redirect jika sudah login
 if(isset($_SESSION['user_id'])) {
-    header("Location: beranda.php");
+    // Cek apakah user adalah admin
+    if($_SESSION['username'] === 'admin') {
+        header("Location: adminpanel.php");
+    } else {
+        header("Location: beranda.php");
+    }
     exit();
 }
 
@@ -47,9 +52,13 @@ include("php/config.php");
                         // Set session variables dengan aman
                         $_SESSION['user_id'] = $user['Id'];
                         $_SESSION['username'] = $user['Username'];
-            
-
-                        header("Location: beranda.php");
+                        
+                        // Cek apakah user adalah admin
+                        if($user['Username'] === 'admin') {
+                            header("Location: adminpanel.php");
+                        } else {
+                            header("Location: beranda.php");
+                        }
                         exit();
                     } else {
                         echo "<div class='message'>
@@ -77,6 +86,10 @@ include("php/config.php");
                 <div class="field input">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" autocomplete="off" required>
+                    <div class="password-container">
+                    <span class="password-toggle" onclick="togglePassword()">👁️ - Show</span><style> .password-toggle { cursor: pointer; } </style>
+
+                </div>
                 </div>
 
                 <div class="field">
@@ -88,5 +101,19 @@ include("php/config.php");
             </form>
         </div>
     </div>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈 - Hide';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️ - Show';
+            }
+        }
+</script>
 </body>
 </html>

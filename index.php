@@ -17,7 +17,7 @@ include("php/config.php");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ForestMinds</title>
+  <title>ForestLens</title>
 
   <!-- 
     - favicon
@@ -47,7 +47,6 @@ include("php/config.php");
 </head>
 
 <body id="top">
-<div id="loader-wrapper">
         
   <main>
     <article>
@@ -133,13 +132,7 @@ include("php/config.php");
 
                     <div class="card-price">
                       <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">47 Views</span>
-                    </div>
+                    </div>  
 
                   </div>
 
@@ -180,12 +173,6 @@ include("php/config.php");
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">65 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -222,12 +209,6 @@ include("php/config.php");
 
                     <div class="card-price">
                       <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">42 Views</span>
                     </div>
 
                   </div>
@@ -268,12 +249,6 @@ include("php/config.php");
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">46 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -310,12 +285,6 @@ include("php/config.php");
 
                     <div class="card-price">
                       <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">91 Views</span>
                     </div>
 
                   </div>
@@ -358,12 +327,6 @@ include("php/config.php");
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -394,33 +357,11 @@ include("php/config.php");
 
       <div class="footer-brand">
 
-        <a href="#" class="logobottom">ForestMinds</a>
+        <a href="#" class="logobottom">ForestLens</a>
 
         <p class="section-text">
-        ForestMinds adalah sebuah langkah awal menuju dunia yang hijau.
+        ForestLens adalah sebuah langkah awal menuju dunia yang hijau.
         </p>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-discord"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
 
       </div>
 
@@ -428,14 +369,11 @@ include("php/config.php");
 
     <div class="footer-bottom text-center">
       <p class="copyright">
-        Copyright 2024 ForestMinds. All Rights Reserved.
+        Copyright 2024 ForestLens. All Rights Reserved.
       </p>
     </div>
   </div>
 </footer>
-
-
-
 
 
   <!-- 
@@ -443,12 +381,7 @@ include("php/config.php");
   -->
 
   <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
-    <ion-icon name="arrow-up"></ion-icon>
   </a>
-
-
-
-
 
   <!-- 
     - custom js link

@@ -130,13 +130,6 @@ $comments_result = mysqli_stmt_get_result($stmt);
 </head>
 
 <body id="top">
- <!-- Page Loader -->
- <div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
   <!-- 
     - #HEADER
   -->
@@ -145,13 +138,13 @@ $comments_result = mysqli_stmt_get_result($stmt);
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">ForestMinds</a>
+        <a href="#" class="logo">ForestLens</a>
       </h1>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
-          <a href="#" class="logo">ForestMinds</a>
+          <a href="#" class="logo">ForestLens</a>
 
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
             <ion-icon name="close-outline"></ion-icon>
@@ -193,10 +186,6 @@ $comments_result = mysqli_stmt_get_result($stmt);
 
     </div>
   </header>
-
-
-  
-  
   <article>
     <section class="hero" id="home" aria-label="hero" style="background-image: url('./assets/images/wallpaperz.jpg')">
       <div class="container-video">
@@ -214,26 +203,14 @@ $comments_result = mysqli_stmt_get_result($stmt);
         </section>
       </div>
     </section>
-  
-
   </div>
 </section>
 
         </div>
       </section>
-
-      <!-- 
-        - #CATEGORY
-      -->
-
-     
-     
       <div class="container-category">
 
       </div>
-
-
-
 
       <!-- 
         - #ABOUT
@@ -328,33 +305,11 @@ yang mungkin terjadi pada dinosaurus.
 
       <div class="footer-brand">
 
-        <a href="#" class="logobottom">ForestMinds</a>
+        <a href="#" class="logobottom">ForestLens</a>
 
         <p class="section-text">
-        ForestMinds adalah sebuah langkah awal menuju dunia yang hijau.
+        ForestLens adalah sebuah langkah awal menuju dunia yang hijau.
         </p>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
 
       </div>
 
@@ -362,7 +317,7 @@ yang mungkin terjadi pada dinosaurus.
 
     <div class="footer-bottom text-center">
       <p class="copyright">
-        Copyright 2024 ForestMinds. All Rights Reserved.
+        Copyright 2024 ForestLens. All Rights Reserved.
       </p>
     </div>
   </div>
@@ -392,8 +347,6 @@ yang mungkin terjadi pada dinosaurus.
   <!-- 
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script>
 document.addEventListener('DOMContentLoaded', function() {
   const commentInput = document.getElementById('comment-input');
@@ -461,13 +414,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-  <script src="js/plugins.js"></script>
-  <script>
-        $(window).on("load", function() {
-            $('body').addClass('loaded');
-        });
-    </script>
-
 </body>
 
 </html>

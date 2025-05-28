@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ForestMinds</title>
+  <title>ForestLens</title>
 
   <!-- 
     - favicon
@@ -35,14 +35,6 @@
 </head>
 
 <body id="top">
-<!-- Page Loader -->
-<div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-
   <!-- 
     - #HEADER
   -->
@@ -51,13 +43,13 @@
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">ForestMinds</a>
+        <a href="#" class="logo">ForestLens</a>
       </h1>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
-          <a href="#" class="logo">ForestMinds</a>
+          <a href="#" class="logo">ForestLens</a>
 
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
             <ion-icon name="close-outline"></ion-icon>
@@ -121,7 +113,6 @@
 
     <figure class="hero-banner">
       <img src="./assets/images/LINGKUNGAN.png" width="500" height="500" loading="lazy" alt="hero image" class="w-100">
-      <img src="./assets/images/silvasuphaa.png" width="160" height="160" loading="lazy" alt="hero image" class="w-100-1">
       <img src="./assets/images/unsrat.png" width="318" height="352" loading="lazy" aria-hidden="true" class="abs-img abs-img-1">
       <img src="./assets/images/fatek.png" width="160" height="160" loading="lazy" aria-hidden="true" class="abs-img abs-img-2">
     </figure>
@@ -141,10 +132,6 @@
       <div class="container-category">
 
 </div>
-
-
-
-
       <!-- 
         - #ABOUT
       -->
@@ -169,31 +156,42 @@
                   <p class="item-text">
                   Tujuan dibentuknya tim ini untuk memenuhi tugas 
                   mata kuliah Pemrograman Web yang diberikan
-                  yakni Mata Kuliah Rekayasa Perangkat Lunak.
+                  yaitu membuat Aplikasi Berbasis Web.
                   </p>
                   <p class="item-text">
                 Kami dari Universitas Sam Ratulangi Manado, Jurusan Teknik Informatika.
                 Dengan susunan team:
                   </p>
+
                   <div class="susunan">
-                  <a href="https://www.instagram.com/jokaligis/" class="teks-susunan-a">Jonathan Kaligis</a>
+                  <a href="https://www.instagram.com/jokaligis/" class="teks-susunan-a">Jonathan G. Kaligis</a>
                   <h1 class="susunan-h1">
                     Sebagai frontend dan backend developer
                   </h1>
+
                   <div class="daniel">
-                  <a href="https://www.instagram.com/jokalzz/" class="teks-susunan-a">Daniel Tafuama</a>
+                  <a href="https://www.instagram.com/jokalzz/" class="teks-susunan-a">Muh. Luhung Ardhana</a>
                   <h1 class="susunan-h1">
-                  Sebagai penulis untuk ide dan konten website ini
+                  Sebagai Frontend dan Backend Developer
                   </h1>
-                </div>
+                
+                  
                 <div class="atan">
-                <a href="https://www.instagram.com/rivaldopaath/" class="teks-susunan-a">Rivaldo Paath</a>
+                <a href="https://www.instagram.com/rivaldopaath/" class="teks-susunan-a">Hikaru Elbona Jones</a>
                   <h1 class="susunan-h1">
                   Sebagai Designer untuk website ini
                   </h1>
+                  <div class="atan">
+                <a href="https://www.instagram.com/rivaldopaath/" class="teks-susunan-a">Arkafali PF Genggong</a>
+                  <h1 class="susunan-h1">
+                  Sebagai Kreatif dalam Konten pada website
+                  </h1>
+                  <br>  
                 </div>
-                </div>
-                </div>
+                  </div>
+                  </div>
+                    </div>
+                    </div>
 
           </div>
           <div class="about-content-kanan">
@@ -256,33 +254,11 @@
 
       <div class="footer-brand">
 
-        <a href="#" class="logobottom">ForestMinds</a>
+        <a href="#" class="logobottom">ForestLens</a>
 
         <p class="section-text">
-        ForestMinds adalah sebuah langkah awal menuju dunia yang hijau.
+        ForestLens adalah sebuah langkah awal menuju dunia yang hijau.
         </p>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-discord"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
 
       </div>
 
@@ -290,44 +266,23 @@
 
     <div class="footer-bottom text-center">
       <p class="copyright">
-        Copyright 2024 ForestMinds. All Rights Reserved.
+        Copyright 2024 ForestLens. All Rights Reserved.
       </p>
     </div>
   </div>
 </footer>
-
-
-
-
 
   <!-- 
     - #BACK TO TOP
   -->
 
   <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
-    <ion-icon name="arrow-up"></ion-icon>
   </a>
-
-
-
-
 
   <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="js/plugins.js"></script>
-  <script>
-        $(window).on("load", function() {
-            $('body').addClass('loaded');
-        });
-    </script>
 </body>
 
 </html>

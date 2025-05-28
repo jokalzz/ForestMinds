@@ -16,7 +16,7 @@ if(!isset($_SESSION['user_id'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ForestMinds</title>
+  <title>ForestLens</title>
 
   <!-- 
     - favicon
@@ -56,17 +56,13 @@ if(!isset($_SESSION['user_id'])) {
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">ForestMinds</a>
+        <a href="#" class="logo">ForestLens</a>
       </h1>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
-          <a href="#" class="logo">ForestMinds</a>
-
-          <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
+          <a href="#" class="logo">ForestLens</a>
         </div>
 
         <ul class="navbar-list">
@@ -81,7 +77,7 @@ if(!isset($_SESSION['user_id'])) {
           </li>
 
           <li class="navbar-item">
-            <a href="contact.php" class="navbar-link" data-nav-toggler>Contact</a>
+            <a href="contact.php" class="navbar-link" data-nav-toggler>Kontak</a>
           </li>
 
         </ul>
@@ -95,10 +91,6 @@ if(!isset($_SESSION['user_id'])) {
           <span class="span">Kembali</span>
         </a>
 
-        <button class="header-action-btn nav-open-btn" aria-label="Open menu" data-nav-toggler>
-          <ion-icon name="menu-outline"></ion-icon>
-        </button>
-
       </div>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
@@ -108,32 +100,8 @@ if(!isset($_SESSION['user_id'])) {
 
   <main>
     <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      
-
         </div>
       </section>
-
-      <!-- 
-        - #CATEGORY
-      -->
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-
-
-
-
-
       <!-- 
         - #COURSE
       -->
@@ -148,8 +116,6 @@ if(!isset($_SESSION['user_id'])) {
 
           <h2 class="h2 section-title">Sudah Siap Untuk Belajar?</h2>
 
-         
-
           <ul class="grid-list">
 
             <li>
@@ -160,22 +126,13 @@ if(!isset($_SESSION['user_id'])) {
                     alt="Competitive Strategy law for all students" class="img-cover">
                 </figure>
 
-                <div class="card-actions">
-
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
-                </div>
-
                 <div class="card-content">
 
                   <ul class="card-meta-list">
 
-                  
-
+<!--Video 1-->                    
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                      
 
                       <time datetime="PT18H15M44S" class="card-meta-text">04m 16s</time>
                     </li>
@@ -186,18 +143,12 @@ if(!isset($_SESSION['user_id'])) {
                     <a href="watch-video-1.php" class="card-title">APA JADINYA JIKA TIDAK ADA HUTAN DI DUNIA?</a>
                   </h3>
 
-
                   <div class="card-footer">
 
                     <div class="card-price">
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">47 Views</span>
-                    </div>
 
                   </div>
 
@@ -206,6 +157,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 2-->  
             <li>
               <div class="course-card">
 
@@ -216,20 +168,13 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
 
                   <ul class="card-meta-list">
 
-                  
-
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 32s</time>
                     </li>
@@ -247,12 +192,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">47 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -260,6 +199,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 3-->  
             <li>
               <div class="course-card">
 
@@ -270,10 +210,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -283,7 +219,6 @@ if(!isset($_SESSION['user_id'])) {
                   
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">04m 37s</time>
                     </li>
@@ -301,12 +236,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">47 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -314,6 +243,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 4-->  
             <li>
               <div class="course-card">
 
@@ -324,10 +254,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -337,7 +263,6 @@ if(!isset($_SESSION['user_id'])) {
                   
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 05s</time>
                     </li>
@@ -356,12 +281,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">47 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -369,7 +288,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
-
+<!--Video 5-->  
             <li>
               <div class="course-card">
 
@@ -380,10 +299,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -392,7 +307,6 @@ if(!isset($_SESSION['user_id'])) {
 
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 34s</time>
                     </li>
@@ -410,12 +324,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">65 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -423,6 +331,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 6-->  
             <li>
               <div class="course-card">
 
@@ -432,9 +341,6 @@ if(!isset($_SESSION['user_id'])) {
                 </figure>
 
                 <div class="card-actions">
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
 
                 </div>
 
@@ -443,7 +349,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">05m 39s</time>
                     </li>
@@ -461,12 +366,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">42 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -474,6 +373,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 7-->  
             <li>
               <div class="course-card">
 
@@ -484,10 +384,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -496,7 +392,6 @@ if(!isset($_SESSION['user_id'])) {
 
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">02m 34s</time>
                     </li>
@@ -511,13 +406,7 @@ if(!isset($_SESSION['user_id'])) {
 
                     <div class="card-price">
                       <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">46 Views</span>
-                    </div>
+                    </div>  
 
                   </div>
 
@@ -526,6 +415,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 8-->   
             <li>
               <div class="course-card">
 
@@ -535,11 +425,6 @@ if(!isset($_SESSION['user_id'])) {
                 </figure>
 
                 <div class="card-actions">
-
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -548,7 +433,6 @@ if(!isset($_SESSION['user_id'])) {
 
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 58s</time>
                     </li>
@@ -566,12 +450,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">91 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -579,6 +457,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 9-->   
             <li>
               <div class="course-card">
 
@@ -589,10 +468,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -600,7 +475,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">02m 46s</time>
                     </li>
@@ -619,12 +493,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -632,6 +500,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 10-->           
             <li>
               <div class="course-card">
 
@@ -642,10 +511,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -653,7 +518,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">02m 20s</time>
                     </li>
@@ -672,12 +536,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -685,6 +543,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 11-->
             <li>
               <div class="course-card">
 
@@ -694,11 +553,6 @@ if(!isset($_SESSION['user_id'])) {
                 </figure>
 
                 <div class="card-actions">
-
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -706,7 +560,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 32s</time>
                     </li>
@@ -725,12 +578,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -738,6 +585,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 12-->
             <li>
               <div class="course-card">
 
@@ -748,10 +596,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -759,7 +603,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 57s</time>
                     </li>
@@ -778,12 +621,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -791,6 +628,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 13-->
             <li>
               <div class="course-card">
 
@@ -801,10 +639,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -812,7 +646,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 34s</time>
                     </li>
@@ -831,12 +664,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -844,6 +671,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 14-->
             <li>
               <div class="course-card">
 
@@ -854,10 +682,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -865,7 +689,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 30s</time>
                     </li>
@@ -884,12 +707,6 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
-
-                      <span class="card-meta-text">22 Views</span>
-                    </div>
-
                   </div>
 
                 </div>
@@ -897,6 +714,7 @@ if(!isset($_SESSION['user_id'])) {
               </div>
             </li>
 
+<!--Video 15-->
             <li>
               <div class="course-card">
 
@@ -907,10 +725,6 @@ if(!isset($_SESSION['user_id'])) {
 
                 <div class="card-actions">
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
-                    <ion-icon name="heart"></ion-icon>
-                  </button>
-
                 </div>
 
                 <div class="card-content">
@@ -918,7 +732,6 @@ if(!isset($_SESSION['user_id'])) {
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
                       <time datetime="PT18H15M44S" class="card-meta-text">03m 20s</time>
                     </li>
@@ -937,10 +750,47 @@ if(!isset($_SESSION['user_id'])) {
                       <span class="span">Tonton Sekarang</span>
                     </div>
 
-                    <div class="card-meta-item">
-                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                  </div>
 
-                      <span class="card-meta-text">22 Views</span>
+                </div>
+
+              </div>
+            </li>
+
+<!--Video 16-->
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/karbon.png" width="370" height="270" loading="lazy"
+                    alt="Education is About Forming Faithful Disciples" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+
+                      <time datetime="PT18H15M44S" class="card-meta-text">03m 20s</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="watch-video-16.php" class="card-title">Apa Jadinya Kalo Gak Ada Karbon Dioksida???</a>
+                  </h3>
+
+
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span">Tonton Sekarang</span>
                     </div>
 
                   </div>
@@ -970,33 +820,12 @@ if(!isset($_SESSION['user_id'])) {
 
       <div class="footer-brand">
 
-        <a href="#" class="logobottom">ForestMinds</a>
+        <a href="#" class="logobottom">ForestLens</a>
 
         <p class="section-text">
-        ForestMinds adalah sebuah langkah awal menuju dunia yang hijau.
+        ForestLens adalah sebuah langkah awal menuju dunia yang hijau.
         </p>
 
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-discord"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
 
       </div>
 
@@ -1004,86 +833,22 @@ if(!isset($_SESSION['user_id'])) {
 
     <div class="footer-bottom text-center">
       <p class="copyright">
-        Copyright 2024 ForestMinds. All Rights Reserved.
+        Copyright 2024 ForestLens. All Rights Reserved.
       </p>
     </div>
   </div>
 </footer>
-
-
-
-
 
   <!-- 
     - #BACK TO TOP
   -->
 
   <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
-    <ion-icon name="arrow-up"></ion-icon>
   </a>
-
-
-
-
-
   <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Pilih semua tombol wishlist
-  const wishlistBtns = document.querySelectorAll('[data-whish-btn]');
-
-  // Loop melalui setiap tombol wishlist
-  wishlistBtns.forEach((wishlistBtn, index) => {
-    const heartIcon = wishlistBtn.querySelector('ion-icon');
-    
-    // Buat unique identifier berdasarkan index atau konten
-    const uniqueId = `video_like_${index}`;
-
-    // Fungsi untuk memeriksa dan menerapkan status like
-    function checkLikeStatus() {
-      const isLiked = localStorage.getItem(uniqueId) === 'true';
-      
-      if (isLiked) {
-        heartIcon.style.color = 'red';
-        wishlistBtn.classList.add('liked');
-      } else {
-        heartIcon.style.color = 'white';
-        wishlistBtn.classList.remove('liked');
-      }
-    }
-
-    // Periksa status like saat halaman dimuat
-    checkLikeStatus();
-
-    wishlistBtn.addEventListener('click', () => {
-      // Toggle status like
-      const currentStatus = localStorage.getItem(uniqueId) === 'true';
-      const newStatus = !currentStatus;
-
-      // Simpan status baru dengan unique identifier
-      localStorage.setItem(uniqueId, newStatus);
-
-      // Terapkan perubahan warna
-      if (newStatus) {
-        heartIcon.style.color = 'red';
-        wishlistBtn.classList.add('liked');
-      } else {
-        heartIcon.style.color = 'white';
-        wishlistBtn.classList.remove('liked');
-      }
-    });
-  });
-});
-</script>
 </body>
 
 </html>

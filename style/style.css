@@ -274,3 +274,14 @@ main{
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Tambahkan efek fokus */
 }
 
+.admin-login-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-login-btn:hover {
+    text-decoration: underline;
+}
