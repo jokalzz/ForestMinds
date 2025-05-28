@@ -14,12 +14,6 @@
 
 </div>
 
-<br />
-DaAzTa -> Daniel Azarya Tafuama (230211060062)
-<br />
-denanzen -> Rivaldo Jonathan Paath (230211060052)
-<br />
-jokalzz -> Jonathan Gabrilio Kaligis (230211060040)
 
 <br />
 
