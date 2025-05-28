@@ -17,8 +17,6 @@
 
 <br />
 
-### This Is Us
-![EduHome Desktop Demo](./readme-images/intro.png "Desktop Demo")
 
 ### Demo Screeshots
 
