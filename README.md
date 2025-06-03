@@ -1,33 +1,18 @@
 <div align="center">
   
   ![GitHub repo size](https://img.shields.io/github/repo-size/jokalzz/ForestMinds)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/eduhome?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/eduhome?style=social)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/dMZujoGxjRo?style=social)](https://youtu.be/dMZujoGxjRo)
 
   <br />
   <br />
 
-  <h2 align="center">ForestMinds - Website Edukasi</h2>
+  <h2 align="center">ForestLens - Website Edukasi</h2>
 
-  ForestMinds adalah adalah sebuah langkah awal menuju dunia yang hijau.
+  ForestLens adalah adalah sebuah langkah awal menuju dunia yang hijau.
 
 </div>
 
 
 <br />
-
-
-### Demo Screeshots
-
-![EduHome Desktop Demo](./readme-images/index.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/Login_Page.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/register.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/beranda.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/edukasi.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/course.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/tentangkami.png "Desktop Demo")
-![EduHome Desktop Demo](./readme-images/kontak.png "Desktop Demo")
 
 ### Persiapan download
 
@@ -37,7 +22,7 @@ Sebelum mulai jangan lupa install Git
 
 ### Penggunaan Project
 
-Cara menggunakan project ini **ForestMinds** di lokal gunakan komen ini:
+Cara menggunakan project ini **ForestLens** di lokal gunakan komen ini:
 
 Linux and macOS:
 
