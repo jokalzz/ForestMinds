@@ -1,8 +1,4 @@
 <div align="center">
-
-  <br />
-  <br />
-
   <h2 align="center">ForestLens - Website Edukasi</h2>
 
   ForestLens adalah adalah sebuah langkah awal menuju dunia yang hijau.
