@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBot - Chatbot Perlindungan Lingkungan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ccd7a5 0%, #7ac06b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            height: 90vh;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #29731f 0%, #156319 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .chat-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .status-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 12px;
+            height: 12px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 80%;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+        }
+
+        .header-action-btn {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #3cbb0a, #54b32e);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            left: 135vh;  /* Geser ke kanan */
+            top: -40vh; 
+            transition: all 0.3s ease;
+        }
+
+        .header-action-btn:hover {
+            background: linear-gradient(135deg, #3ca335, #248a20);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-action-btn .span {
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.bot .message-content {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #e9ecef;
+            border-bottom-left-radius: 5px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .avatar.user {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .avatar.bot {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .input-form {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .message-input:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .send-button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            border-bottom-left-radius: 5px;
+            max-width: 80px;
+            align-self: flex-start;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .api-config {
+            display: none;
+        }
+
+        .suggestions-container {
+            padding: 15px 20px;
+            background: #f8f9ff;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .suggestions-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .suggestion-btn {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+            border: 1px solid #c8e6c9;
+            border-radius: 15px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: #2e7d32;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .suggestion-btn:hover {
+            background: linear-gradient(135deg, #c8e6c9 0%, #e8f5e8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+        }
+
+        .suggestion-btn:active {
+            transform: translateY(0);
+        }
+
+        .suggestion-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .suggestion-text {
+            line-height: 1.3;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            padding: 10px;
+            background: #ffe6e6;
+            border-radius: 5px;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chat-container {
+                height: 100vh;
+                border-radius: 0;
+            }
+            
+            .api-config {
+                position: relative;
+                margin-bottom: 20px;
+                left: 0;
+                top: 0;
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .suggestions-grid {
+                grid-template-columns: 1fr;
+                max-height: 150px;
+            }
+            
+            .suggestion-btn {
+                font-size: 0.8rem;
+                padding: 10px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="header-actions">
+
+        <a href="beranda.php" class="header-action-btn login-btn">
+
+          <span class="span">Kembali</span>
+        </a>
+        </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="status-indicator"></div>
+            <h1>🌲 EcoBot Assistant</h1>
+            <p>Chatbot Pelindung Lingkungan & Hutan</p>
+        </div>
+
+        <div class="messages" id="messages">
+            <div class="message bot">
+                <div class="avatar bot">AI</div>
+                <div class="message-content">
+                    Halo! Saya adalah EcoBot Assistant 🌿 - chatbot khusus yang membantu Anda belajar tentang perlindungan lingkungan dan hutan. Tanya saya tentang:
+                    
+                    🌳 Konservasi hutan
+                    🌱 Pelestarian lingkungan  
+                    ♻️ Daur ulang & pengurangan sampah
+                    🐾 Perlindungan satwa liar
+                    🌍 Perubahan iklim
+                    
+                    Mari kita jaga bumi bersama-sama! 💚
+                </div>
+            </div>
+        </div>
+
+        <div class="suggestions-container" id="suggestionsContainer">
+            <div class="suggestions-title">💡 Pilih Pertanyaan Populer:</div>
+            <div class="suggestions-grid" id="suggestionsGrid">
+                <!-- Suggestions will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <form class="input-form" id="messageForm">
+                <input type="text" class="message-input" id="messageInput" 
+                       placeholder="Tanya tentang perlindungan lingkungan dan hutan..." autocomplete="off">
+                <button type="submit" class="send-button" id="sendButton">
+                    ➤
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        class GeminiChatbot {
+            constructor() {
+                // ========================================
+                // MASUKKAN API KEY GEMINI ANDA DI SINI:
+                this.apiKey = 'AIzaSyCzQkPhzSBfTeUx4zkFP7iLvDQt-pBmSyw';
+                // ========================================
+                
+                this.messages = [];
+                this.isLoading = false;
+                this.suggestions = [
+                    { icon: '🌳', text: 'Bagaimana cara menanam pohon yang benar?' },
+                    { icon: '♻️', text: 'Tips mengurangi sampah plastik di rumah' },
+                    { icon: '🌱', text: 'Apa itu energi terbarukan?' },
+                    { icon: '🐾', text: 'Mengapa hewan langka perlu dilindungi?' },
+                    { icon: '🌍', text: 'Apa penyebab utama perubahan iklim?' },
+                    { icon: '💧', text: 'Cara menghemat air di kehidupan sehari-hari' },
+                    { icon: '🌿', text: 'Manfaat hutan untuk kehidupan manusia' },
+                    { icon: '🚗', text: 'Dampak polusi udara dan cara menguranginya' },
+                    { icon: '🌾', text: 'Apa itu pertanian organik?' },
+                    { icon: '⚡', text: 'Cara menghemat energi listrik di rumah' },
+                    { icon: '🏔️', text: 'Mengapa deforestasi berbahaya?' },
+                    { icon: '🌊', text: 'Dampak pencemaran laut terhadap ekosistem' },
+                    { icon: '🍃', text: 'Tanaman apa yang bisa membersihkan udara?' },
+                    { icon: '🌸', text: 'Cara membuat kompos dari sampah organik' },
+                    { icon: '🦋', text: 'Peran serangga dalam ekosistem' },
+                    { icon: '🌤️', text: 'Efek rumah kaca dan cara menguranginya' }
+                ];
+                
+                this.initializeElements();
+                this.attachEventListeners();
+                this.renderSuggestions();
+            }
+
+            initializeElements() {
+                this.messagesContainer = document.getElementById('messages');
+                this.messageInput = document.getElementById('messageInput');
+                this.messageForm = document.getElementById('messageForm');
+                this.sendButton = document.getElementById('sendButton');
+                this.typingIndicator = document.getElementById('typingIndicator');
+                this.errorMessage = document.getElementById('errorMessage');
+                this.suggestionsContainer = document.getElementById('suggestionsContainer');
+                this.suggestionsGrid = document.getElementById('suggestionsGrid');
+            }
+
+            attachEventListeners() {
+                this.messageForm.addEventListener('submit', (e) => this.handleSubmit(e));
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.handleSubmit(e);
+                    }
+                });
+            }
+
+            renderSuggestions() {
+                this.suggestionsGrid.innerHTML = '';
+                
+                this.suggestions.forEach(suggestion => {
+                    const btn = document.createElement('button');
+                    btn.className = 'suggestion-btn';
+                    btn.innerHTML = `
+                        <span class="suggestion-icon">${suggestion.icon}</span>
+                        <span class="suggestion-text">${suggestion.text}</span>
+                    `;
+                    
+                    btn.addEventListener('click', () => {
+                        this.selectSuggestion(suggestion.text);
+                    });
+                    
+                    this.suggestionsGrid.appendChild(btn);
+                });
+            }
+
+            selectSuggestion(text) {
+                this.messageInput.value = text;
+                this.messageInput.focus();
+                
+                // Auto submit the suggestion
+                setTimeout(() => {
+                    this.handleSubmit({ preventDefault: () => {} });
+                }, 100);
+            }
+
+            hideSuggestions() {
+                this.suggestionsContainer.style.display = 'none';
+            }
+
+            showSuggestions() {
+                this.suggestionsContainer.style.display = 'block';
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const message = this.messageInput.value.trim();
+                if (!message || this.isLoading) return;
+
+                if (!this.apiKey || this.apiKey === 'MASUKKAN_API_KEY_ANDA_DISINI') {
+                    this.showError('API Key belum diatur! Silakan edit kode untuk memasukkan API Key Gemini Anda.');
+                    return;
+                }
+
+                this.addMessage(message, 'user');
+                this.messageInput.value = '';
+                this.setLoading(true);
+                
+                // Hide suggestions after first question
+                this.hideSuggestions();
+
+                try {
+                    const response = await this.sendToGemini(message);
+                    this.addMessage(response, 'bot');
+                } catch (error) {
+                    console.error('Error:', error);
+                    this.addMessage('Maaf, terjadi kesalahan. Silakan periksa API Key Anda atau coba lagi nanti.', 'bot');
+                    this.showError('Error: ' + error.message);
+                } finally {
+                    this.setLoading(false);
+                }
+            }
+
+            async sendToGemini(message) {
+                // Enhanced system prompt untuk format yang lebih baik
+                const systemPrompt = `Anda adalah EcoBot Assistant, chatbot khusus yang membantu edukasi tentang perlindungan lingkungan dan hutan. 
+
+ATURAN PENTING:
+- Hanya jawab pertanyaan yang berkaitan dengan: perlindungan lingkungan, konservasi hutan, pelestarian alam, daur ulang, pengurangan sampah, energi terbarukan, perubahan iklim, perlindungan satwa liar, ekosistem, dan topik lingkungan lainnya.
+- Jika pertanyaan TIDAK berkaitan dengan topik lingkungan/hutan, jawab dengan sopan: "Maaf, saya adalah EcoBot yang khusus membantu tentang perlindungan lingkungan dan hutan. Silakan tanya tentang topik lingkungan, konservasi, atau cara melindungi alam sekitar kita. 🌿"
+
+FORMAT JAWABAN YANG DIINGINKAN:
+1. Mulai dengan pengantar singkat tentang topik
+2. Gunakan struktur yang jelas dengan poin-poin
+3. Berikan penjelasan yang mudah dipahami
+4. Tambahkan tips praktis yang bisa diterapkan
+5. Gunakan emoji yang relevan untuk mempercantik tampilan
+
+CONTOH FORMAT JAWABAN:
+🌳 Cara Menanam Pohon yang Benar
+
+Menanam pohon adalah salah satu cara paling efektif untuk membantu lingkungan. Berikut langkah-langkahnya:
+
+1. Persiapan:
+• Pilih bibit yang sehat dan berkualitas
+• Pilih lokasi yang tepat sesuai jenis pohon
+• Siapkan peralatan seperti cangkul dan pupuk
+
+2. Penanaman:
+• Gali lubang 2-3 kali lebar akar
+• Keluarkan bibit dari wadah dengan hati-hati
+• Masukkan bibit dan isi dengan tanah
+• Siram dengan air secukupnya
+
+💡 Tips Tambahan:
+- Pilih waktu pagi atau sore untuk menanam
+- Berikan pupuk organik secara berkala
+- Jaga dari hama dan penyakit
+
+Dengan menanam pohon, kita berkontribusi pada udara yang lebih bersih dan lingkungan yang lebih sehat! 🌿
+
+---
+
+Jawab dalam bahasa Indonesia yang ramah dan mudah dipahami. Gunakan format seperti contoh di atas.
+
+Pertanyaan user: "${message}"`;
+
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`;
+                
+                const requestBody = {
+                    contents: [{
+                        parts: [{
+                            text: systemPrompt
+                        }]
+                    }]
+                };
+
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error?.message || `HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    throw new Error('Tidak ada respons yang valid dari Gemini');
+                }
+            }
+
+            addMessage(content, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const avatar = document.createElement('div');
+                avatar.className = `avatar ${sender}`;
+                avatar.textContent = sender === 'user' ? 'You' : 'AI';
+                
+                const messageContent = document.createElement('div');
+                messageContent.className = 'message-content';
+                let temp = content.replace(/\*\*/g, '');
+                temp = temp.replace(/^\s*\*\s+/gm, '');
+                messageContent.innerHTML = temp.replace(/\n/g, '<br>');
+                
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(messageContent);
+                
+                this.messagesContainer.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+
+            setLoading(loading) {
+                this.isLoading = loading;
+                this.sendButton.disabled = loading;
+                this.messageInput.disabled = loading;
+                
+                if (loading) {
+                    this.typingIndicator.style.display = 'block';
+                    this.scrollToBottom();
+                } else {
+                    this.typingIndicator.style.display = 'none';
+                }
+            }
+
+            scrollToBottom() {
+                setTimeout(() => {
+                    this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                }, 100);
+            }
+
+            showError(message) {
+                this.errorMessage.textContent = message;
+                this.errorMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    this.hideError();
+                }, 5000);
+            }
+
+            hideError() {
+                this.errorMessage.style.display = 'none';
+            }
+        }
+
+        // Initialize chatbot when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new GeminiChatbot();
+        });
+    </script>
+</body>
+</html>

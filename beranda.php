@@ -71,7 +71,7 @@ if(!isset($_SESSION['user_id'])) {
 
         <ul class="navbar-list">
         <li class="navbar-item">
-            <a href="prediksi.php" class="navbar-link" data-nav-toggler></a>
+            <a href="chatbot.html" class="navbar-link" data-nav-toggler>Chatbot</a>
           </li>
 
           <li class="navbar-item">
