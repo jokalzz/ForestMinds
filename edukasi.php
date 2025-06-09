@@ -1,4 +1,3 @@
-
 <?php
 include('./php/config.php');
 session_start();
@@ -7,6 +6,10 @@ if(!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+
+// Ambil data video dari database
+$videos_query = "SELECT * FROM videos ORDER BY created_at ASC";
+$videos_result = mysqli_query($con, $videos_query);
 ?>
 
 <!DOCTYPE html>
@@ -117,331 +120,53 @@ if(!isset($_SESSION['user_id'])) {
           <h2 class="h2 section-title">Sudah Siap Untuk Belajar?</h2>
 
           <ul class="grid-list">
-
+          <?php 
+            $video_counter = 1;
+            while($video = mysqli_fetch_assoc($videos_result)): 
+            ?>
             <li>
               <div class="course-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/hutan-tidak-ada.jpg" width="370" height="270" loading="lazy"
-                    alt="Competitive Strategy law for all students" class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-<!--Video 1-->                    
-                    <li class="card-meta-item">
-                      
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">04m 16s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-1.php" class="card-title">APA JADINYA JIKA TIDAK ADA HUTAN DI DUNIA?</a>
-                  </h3>
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 2-->  
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/ini-masalahnya.jpg" width="370" height="270" loading="lazy"
-                    alt="Competitive Strategy law for all students" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 32s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-2.php" class="card-title">SATU MASALAH LINGKUNGAN YANG JARANG DIBAHAS</a>
-                  </h3>
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 3-->  
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/benua-sampah.jpg" width="370" height="270" loading="lazy"
-                    alt="Competitive Strategy law for all students" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
+                  <?php if(!empty($video['thumbnail'])): ?>
+                    <img src="<?php echo htmlspecialchars($video['thumbnail']); ?>" width="370" height="270" loading="lazy"
+                      alt="<?php echo htmlspecialchars($video['title']); ?>" class="img-cover">
+                  <?php else: ?>
+                    <img src="./assets/images/default-video-thumbnail.jpg" width="370" height="270" loading="lazy"
+                      alt="<?php echo htmlspecialchars($video['title']); ?>" class="img-cover">
+                  <?php endif; ?>
                   
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">04m 37s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-3.php" class="card-title">SEBERAPA BANYAK SAMPAH PLASTIK DI DUNIA</a>
-                  </h3>
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 4-->  
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/polusi.jpg" width="370" height="270" loading="lazy"
-                    alt="Competitive Strategy law for all students" class="img-cover">
+                  <!-- Video Duration Overlay -->
+                  <?php if(!empty($video['waktu_video'])): ?>
+                    <div class="video-duration"><?php echo htmlspecialchars($video['waktu_video']); ?></div>
+                  <?php endif; ?>
                 </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                  
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 05s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-4.php" class="card-title">
-                    POLUSI UDARA – BAGAIMANA DAMPAKNYA TERHADAP KESEHATAN KITA</a>
-                  </h3>
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 5-->  
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/lingkungan-pademi.jpg" width="370" height="270" loading="lazy"
-                    alt="Machine Learning A-Z: Hands-On Python and java" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 34s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-5.php" class="card-title">BENARKAH LINGKUNGAN MEMBAIK SAAT PANDEMI CORONA</a>
-                  </h3>
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 6-->  
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/pemanasan global.jpg" width="370" height="270" loading="lazy"
-                    alt="Achieving Advanced in Insights with Big" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
 
                 <div class="card-content">
 
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">05m 39s</time>
+                      <time datetime="<?php echo $video['created_at']; ?>" class="card-meta-text">
+                        <?php echo date('d M Y', strtotime($video['created_at'])); ?>
+                      </time>
                     </li>
 
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-6.php" class="card-title">APAKAH KITA BISA MENGHENTIKAN PEMANASAN GLOBAL?</a>
-                  </h3>
-
-                 
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 7-->  
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/sering-kebakaran.jpg" width="370" height="270" loading="lazy"
-                    alt="Education Makes A Person A Responsible Citizen" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-
+                    <?php if(!empty($video['waktu_video'])): ?>
                     <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">02m 34s</time>
+                      <span class="card-meta-text">
+                        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                        <?php echo htmlspecialchars($video['waktu_video']); ?>
+                      </span>
                     </li>
+                    <?php endif; ?>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="watch-video-7.php" class="card-title">KENAPA INDONESIA SERING KEBAKARAN HUTAN?</a>
-                  </h3>
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>  
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 8-->   
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/manusia-mencegah.jpg" width="370" height="270" loading="lazy"
-                    alt="Building A Better World One Student At A Time" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 58s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-8.php" class="card-title">
-                    BISAKAH MANUSIA MENCEGAH KERUSAKAN BUMI?</a>
+                    <a href="watch-video.php?id=<?php echo $video['id']; ?>" class="card-title">
+                      <?php echo strtoupper(htmlspecialchars($video['title'])); ?>
+                    </a>
                   </h3>
 
                   <div class="card-footer">
@@ -456,349 +181,21 @@ if(!isset($_SESSION['user_id'])) {
 
               </div>
             </li>
+            <?php 
+            $video_counter++;
+            endwhile; 
+            ?>
 
-<!--Video 9-->   
+            <?php if(mysqli_num_rows($videos_result) == 0): ?>
             <li>
               <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/gunung-meletus.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
+                <div class="card-content" style="text-align: center; padding: 2rem;">
+                  <h3 class="h3">Belum Ada Video</h3>
+                  <p>Video edukasi akan segera tersedia.</p>
                 </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">02m 46s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-9.php" class="card-title">KENAPA GUNUNG BERAPI MELETUS?</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
               </div>
             </li>
-
-<!--Video 10-->           
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/minyak-habis.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">02m 20s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-10.php" class="card-title">APAKAH MINYAK DI DUNIA INI AKAN HABIS?</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 11-->
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/Oksigen-DuaKali.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 32s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-11.php" class="card-title">GIMANA JIKA OKSIGEN DI BUMI NINGKAT DUA KALI LIPAT?</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 12-->
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/gurun.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 57s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-12.php" class="card-title">GURUN TERLUAS DI DUNIA? BUKAN SAHARA!</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 13-->
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/hutan.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 34s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-13.php" class="card-title">MENJAGA HUTAN UNTUK MELINDUNGI OZON DAN MASA DEPAN KITA</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 14-->
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/penyebab.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 30s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-14.php" class="card-title">APA YANG MENJADI PENYEBAB KEBAKARAN HUTAN DI SUMATERA?</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 15-->
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/akhir.jpg" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 20s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-15.php" class="card-title">BAGAIMANA JADINYA JIKALAU SEMUA GUNUNG BERAPI MELETUS???</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-<!--Video 16-->
-            <li>
-              <div class="course-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/karbon.png" width="370" height="270" loading="lazy"
-                    alt="Education is About Forming Faithful Disciples" class="img-cover">
-                </figure>
-
-                <div class="card-actions">
-
-                </div>
-
-                <div class="card-content">
-
-                  <ul class="card-meta-list">
-
-                    <li class="card-meta-item">
-
-                      <time datetime="PT18H15M44S" class="card-meta-text">03m 20s</time>
-                    </li>
-
-                  </ul>
-
-                  <h3 class="h3">
-                    <a href="watch-video-16.php" class="card-title">Apa Jadinya Kalo Gak Ada Karbon Dioksida???</a>
-                  </h3>
-
-
-
-                  <div class="card-footer">
-
-                    <div class="card-price">
-                      <span class="span">Tonton Sekarang</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
+            <?php endif; ?>
 
           </ul>
 

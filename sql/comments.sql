@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2024 at 11:53 AM
+-- Generation Time: Jun 09, 2025 at 03:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,19 +36,6 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `video_id`, `user_id`, `comment_text`, `created_at`) VALUES
-(298, 1, 36, 'wah jadi kita harus menjaga hutan ya!', '2024-11-29 06:13:38'),
-(299, 2, 36, 'waduhh :(', '2024-11-29 06:14:07'),
-(300, 2, 36, '!!!', '2024-11-29 06:14:42'),
-(301, 6, 26, 'aa', '2024-11-29 06:17:29'),
-(302, 4, 26, 'wah', '2024-11-29 06:18:05'),
-(303, 4, 26, 'aa', '2024-11-29 06:18:14'),
-(304, 5, 26, 'omg beta', '2024-11-29 18:37:51');
-
---
 -- Indexes for dumped tables
 --
 
@@ -68,7 +55,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
 
 --
 -- Constraints for dumped tables
